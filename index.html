@@ -8,17 +8,11 @@
   <style>
     :root {
       --bg: #090a10;
-      --bg-soft: #0f1320;
-      --panel: rgba(18, 22, 34, 0.78);
-      --line: rgba(255, 255, 255, 0.08);
       --text: #f7f8fc;
-      --muted: #c1c9dd;
-      --red: #9b1d37;
-      --blue: #35598b;
+      --muted: #c6cede;
+      --line: rgba(255, 255, 255, 0.08);
+      --panel: rgba(18, 22, 35, 0.88);
       --shadow: 0 18px 48px rgba(0, 0, 0, 0.30);
-      --radius-xl: 30px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
       --max-width: 1180px;
     }
 
@@ -35,8 +29,8 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 8% 8%, rgba(155, 29, 55, 0.22), transparent 24%),
-        radial-gradient(circle at 92% 12%, rgba(53, 89, 139, 0.18), transparent 26%),
+        radial-gradient(circle at 8% 8%, rgba(155, 29, 55, 0.18), transparent 24%),
+        radial-gradient(circle at 92% 12%, rgba(53, 89, 139, 0.16), transparent 26%),
         linear-gradient(180deg, #08090e 0%, #0c1018 44%, #090a10 100%);
       min-height: 100vh;
       overflow-x: hidden;
@@ -48,12 +42,12 @@
       inset: 0;
       pointer-events: none;
       background:
-        radial-gradient(circle at 20% 25%, rgba(255,255,255,0.06) 0 1px, transparent 1.5px),
-        radial-gradient(circle at 70% 35%, rgba(255,255,255,0.05) 0 1px, transparent 1.5px),
-        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.04) 0 1px, transparent 1.5px),
-        radial-gradient(circle at 85% 70%, rgba(255,255,255,0.04) 0 1px, transparent 1.5px);
+        radial-gradient(circle at 20% 25%, rgba(255,255,255,0.05) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 70% 35%, rgba(255,255,255,0.04) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.03) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 85% 70%, rgba(255,255,255,0.03) 0 1px, transparent 1.5px);
       background-size: 260px 260px, 320px 320px, 300px 300px, 280px 280px;
-      opacity: 0.42;
+      opacity: 0.32;
     }
 
     a {
@@ -65,40 +59,6 @@
     video {
       display: block;
       max-width: 100%;
-    }
-
-    .blob {
-      position: fixed;
-      border-radius: 999px;
-      filter: blur(72px);
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.28;
-    }
-
-    .blob.one {
-      width: 220px;
-      height: 220px;
-      top: 120px;
-      left: -40px;
-      background: rgba(155, 29, 55, 0.36);
-    }
-
-    .blob.two {
-      width: 280px;
-      height: 280px;
-      top: 160px;
-      right: -90px;
-      background: rgba(53, 89, 139, 0.30);
-    }
-
-    .blob.three {
-      width: 260px;
-      height: 260px;
-      bottom: 90px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(89, 35, 61, 0.18);
     }
 
     .site {
@@ -186,108 +146,79 @@
     }
 
     .hero {
-      padding: 26px 0 34px;
-    }
-
-    .hero-shell {
       position: relative;
-      min-height: 540px;
-      border-radius: 34px;
-      overflow: hidden;
+      min-height: 640px;
+      display: flex;
+      align-items: center;
+      margin-top: -72px;
+      padding: 120px 0 56px;
       background: #000;
-      box-shadow: var(--shadow);
-      isolation: isolate;
+      overflow: hidden;
     }
 
-    .hero-shell::before {
+    .hero::before {
       content: "";
       position: absolute;
       inset: 0;
       background: url("Contents/Thumb.webp") center center / cover no-repeat;
-      opacity: 0.6;
-      transform: scale(1.02);
+      opacity: 0.7;
       z-index: -2;
     }
 
-    .hero-shell::after {
+    .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.70) 34%, rgba(0,0,0,0.44) 64%, rgba(0,0,0,0.60) 100%),
-        linear-gradient(180deg, rgba(7,8,13,0.18) 0%, rgba(7,8,13,0.34) 100%);
+      background: linear-gradient(180deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.62) 36%, rgba(0,0,0,0.68) 100%);
       z-index: -1;
     }
 
-    .hero-content {
-      min-height: 540px;
+    .hero-inner {
+      width: min(calc(100% - 32px), 1240px);
+      margin: 0 auto;
+    }
+
+    .hero-copy {
+      max-width: 980px;
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-      gap: 40px;
-      align-items: stretch;
-      padding: 56px;
+      gap: 18px;
+      align-content: center;
     }
 
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      max-width: 640px;
-    }
-
-    .hero-note {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      width: fit-content;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.92);
-      font-size: 0.92rem;
-      margin-bottom: 18px;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero-note::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ff7090, #7aa7ff);
-      box-shadow: 0 0 12px rgba(255, 112, 144, 0.55);
+    .hero-subtitle {
+      font-size: 0.98rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.84);
     }
 
     .hero-title {
-      font-size: clamp(3.5rem, 7.3vw, 6.6rem);
+      font-size: clamp(3.9rem, 8vw, 7rem);
       line-height: 0.92;
       letter-spacing: -0.07em;
-      max-width: 8.8ch;
-      margin-bottom: 18px;
+      max-width: 11.5ch;
       text-wrap: balance;
+      text-shadow: 0 12px 32px rgba(0,0,0,0.28);
     }
 
     .hero-title .accent {
       display: block;
-      background: linear-gradient(90deg, #ffffff 0%, #ffc4d0 34%, #95b9ff 76%, #ffffff 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: #ffffff;
     }
 
-    .hero-sub {
-      max-width: 56ch;
+    .hero-text {
+      max-width: 74ch;
+      font-size: 1.08rem;
+      line-height: 1.86;
       color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.82;
+      text-shadow: 0 8px 20px rgba(0,0,0,0.22);
     }
 
     .hero-links {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
+      padding-top: 6px;
     }
 
     .mini-link {
@@ -298,56 +229,17 @@
       padding: 0 18px;
       border-radius: 999px;
       font-weight: 600;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: rgba(255,255,255,0.94);
-      transition: 0.24s ease;
-      backdrop-filter: blur(8px);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.95);
+      transition: transform 0.24s ease, background 0.24s ease, border-color 0.24s ease;
+      backdrop-filter: blur(6px);
     }
 
     .mini-link:hover {
       transform: translateY(-3px);
-      background: rgba(255,255,255,0.11);
-    }
-
-    .hero-right {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-    }
-
-    .hero-side {
-      width: min(100%, 360px);
-      display: grid;
-      gap: 18px;
-      align-content: end;
-      justify-items: end;
-      text-align: right;
-      padding-top: 48px;
-    }
-
-    .hero-label {
-      color: rgba(255,255,255,0.60);
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 8px;
-    }
-
-    .hero-service {
-      max-width: 320px;
-    }
-
-    .hero-service h3 {
-      font-size: clamp(1.35rem, 2.4vw, 2rem);
-      letter-spacing: -0.04em;
-      margin-bottom: 8px;
-    }
-
-    .hero-service p {
-      color: rgba(255,255,255,0.76);
-      line-height: 1.75;
-      font-size: 0.98rem;
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.18);
     }
 
     .section-head {
@@ -407,13 +299,13 @@
       padding: 10px;
       overflow: hidden;
       box-shadow: var(--shadow);
-      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .frame:hover {
-      transform: translateY(-7px);
+      transform: translateY(-8px);
       border-color: rgba(255,255,255,0.15);
-      box-shadow: 0 24px 56px rgba(0,0,0,0.34);
+      box-shadow: 0 26px 58px rgba(0,0,0,0.36);
     }
 
     .frame img,
@@ -422,6 +314,8 @@
       height: auto;
       border-radius: 16px;
       background: #0b0d14;
+      transition: transform 0.45s ease, filter 0.3s ease;
+      will-change: transform;
     }
 
     .frame img {
@@ -430,6 +324,12 @@
 
     .frame video {
       object-fit: contain;
+    }
+
+    .frame:hover img,
+    .frame:hover video {
+      transform: scale(1.035);
+      filter: brightness(1.04);
     }
 
     .pricing-wrap {
@@ -554,34 +454,23 @@
     }
 
     @media (max-width: 980px) {
-      .hero-content,
       .about-grid,
       .pricing-wrap,
       .video-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-content {
-        padding: 42px 28px;
-        gap: 24px;
-        min-height: 500px;
+      .hero {
+        min-height: 560px;
+        padding-top: 116px;
       }
 
-      .hero-left {
+      .hero-copy {
         max-width: 100%;
       }
 
-      .hero-right {
-        justify-content: flex-start;
-        align-items: flex-start;
-      }
-
-      .hero-side {
-        justify-items: start;
-        text-align: left;
-        width: 100%;
-        max-width: 420px;
-        padding-top: 0;
+      .hero-title {
+        max-width: 10.5ch;
       }
 
       .media-grid {
@@ -601,21 +490,17 @@
       }
 
       .hero {
-        padding-top: 18px;
-      }
-
-      .hero-shell {
-        border-radius: 26px;
-      }
-
-      .hero-content {
-        padding: 30px 22px;
-        min-height: 460px;
+        min-height: 500px;
+        padding: 122px 0 44px;
       }
 
       .hero-title {
         max-width: none;
-        font-size: clamp(3rem, 11vw, 4.5rem);
+        font-size: clamp(3rem, 12vw, 4.8rem);
+      }
+
+      .hero-text {
+        font-size: 1rem;
       }
 
       .media-grid {
@@ -630,10 +515,6 @@
   </style>
 </head>
 <body>
-  <div class="blob one"></div>
-  <div class="blob two"></div>
-  <div class="blob three"></div>
-
   <div class="site">
     <header class="topbar">
       <div class="container topbar-inner">
@@ -654,44 +535,24 @@
     </header>
 
     <main id="top">
-      <section class="hero">
-        <div class="container reveal">
-          <div class="hero-shell">
-            <div class="hero-content">
-              <div class="hero-left">
-                <div class="hero-note">Roblox Builder & Animator</div>
+      <section class="hero reveal">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <div class="hero-subtitle">Roblox Builder & Animator</div>
 
-                <h1 class="hero-title">
-                  Clean Roblox work
-                  <span class="accent">with actual style.</span>
-                </h1>
+            <h1 class="hero-title">
+              Clean Roblox work
+              <span class="accent">with actual style.</span>
+            </h1>
 
-                <p class="hero-sub">
-                  I’m <strong>Roblox_hood0928</strong>. I focus on building and animating for Roblox projects that want a clean look, smooth motion, and work that feels good in-game instead of overcomplicated. If you need environment work, scene design, or animations that feel polished and usable, that’s exactly what I’m here for.
-                </p>
+            <p class="hero-text">
+              I’m <strong>Roblox_hood0928</strong>. I focus on building and animating for Roblox projects that want a clean look, smooth motion, and work that feels good in-game instead of overcomplicated. If you need environment work, scene design, or animations that feel polished and usable, that’s exactly what I’m here for.
+            </p>
 
-                <div class="hero-links">
-                  <a class="mini-link" href="#builds">View Builds</a>
-                  <a class="mini-link" href="#animations">View Animations</a>
-                  <a class="mini-link" href="#pricing">View Pricing</a>
-                </div>
-              </div>
-
-              <div class="hero-right">
-                <div class="hero-side">
-                  <div class="hero-service">
-                    <div class="hero-label">Building</div>
-                    <h3>Maps, scenes, and environment work that feels clean in-game.</h3>
-                    <p>Readable shapes, stronger presentation, and detail that fits the style of the project instead of making it feel cluttered.</p>
-                  </div>
-
-                  <div class="hero-service">
-                    <div class="hero-label">Animating</div>
-                    <h3>Animation work with smoother motion and better feel.</h3>
-                    <p>Custom Roblox animation made to look polished, usable, and natural once it’s actually inside the experience.</p>
-                  </div>
-                </div>
-              </div>
+            <div class="hero-links">
+              <a class="mini-link" href="#builds">View Builds</a>
+              <a class="mini-link" href="#animations">View Animations</a>
+              <a class="mini-link" href="#pricing">View Pricing</a>
             </div>
           </div>
         </div>

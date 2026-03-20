@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roblox_hood0928 | Building & Animation Portfolio</title>
-  <meta name="description" content="Roblox_hood0928 - Roblox building and animation portfolio. Custom builds, clean animations, and client-friendly pricing in Robux." />
+  <title>Roblox_hood0928 | Builder & Animator</title>
+  <meta name="description" content="Roblox_hood0928 portfolio - Roblox builder and animator available for Robux commissions." />
   <style>
     :root {
-      --bg: #07080d;
-      --panel: rgba(14, 17, 28, 0.78);
-      --panel-strong: rgba(18, 22, 36, 0.94);
-      --line: rgba(255, 255, 255, 0.09);
-      --text: #f5f7fb;
-      --muted: #b7bfd3;
-      --red-1: #6f1021;
-      --red-2: #b31d3b;
-      --blue-1: #182846;
-      --blue-2: #2a4675;
-      --white-soft: rgba(255, 255, 255, 0.78);
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
-      --radius-lg: 28px;
-      --radius-md: 20px;
-      --radius-sm: 16px;
-      --max-width: 1220px;
+      --bg: #0a0b12;
+      --bg-soft: #101522;
+      --panel: rgba(20, 24, 38, 0.72);
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #f7f8fc;
+      --muted: #bcc5db;
+      --red-dark: #48101d;
+      --red: #9b1d37;
+      --blue-dark: #182843;
+      --blue: #35598b;
+      --white: #ffffff;
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+      --max-width: 1180px;
     }
 
     * {
@@ -38,10 +38,10 @@
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(179, 29, 59, 0.18), transparent 30%),
-        radial-gradient(circle at top right, rgba(42, 70, 117, 0.18), transparent 34%),
-        radial-gradient(circle at bottom center, rgba(115, 27, 49, 0.12), transparent 35%),
-        linear-gradient(160deg, #05060a 0%, #09101c 35%, #09070b 68%, #0a0d15 100%);
+        radial-gradient(circle at 8% 8%, rgba(155, 29, 55, 0.22), transparent 24%),
+        radial-gradient(circle at 92% 12%, rgba(53, 89, 139, 0.20), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(155, 29, 55, 0.10), transparent 30%),
+        linear-gradient(180deg, #090a10 0%, #0c1019 42%, #0a0b12 100%);
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -51,12 +51,13 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.07;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
-      background-size: 34px 34px;
-      mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
+      background:
+        radial-gradient(circle at 20% 25%, rgba(255,255,255,0.06) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 70% 35%, rgba(255,255,255,0.05) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.05) 0 1px, transparent 1.5px),
+        radial-gradient(circle at 85% 70%, rgba(255,255,255,0.04) 0 1px, transparent 1.5px);
+      background-size: 260px 260px, 320px 320px, 300px 300px, 280px 280px;
+      opacity: 0.5;
     }
 
     a {
@@ -67,41 +68,41 @@
     img,
     video {
       display: block;
-      width: 100%;
+      max-width: 100%;
     }
 
-    .orb {
+    .blob {
       position: fixed;
       border-radius: 999px;
-      filter: blur(70px);
+      filter: blur(68px);
       pointer-events: none;
       z-index: 0;
-      opacity: 0.35;
+      opacity: 0.34;
     }
 
-    .orb.red {
-      width: 260px;
-      height: 260px;
-      left: -50px;
+    .blob.one {
+      width: 220px;
+      height: 220px;
       top: 120px;
-      background: rgba(179, 29, 59, 0.28);
+      left: -40px;
+      background: rgba(155, 29, 55, 0.34);
     }
 
-    .orb.blue {
-      width: 320px;
-      height: 320px;
-      right: -90px;
-      top: 140px;
-      background: rgba(42, 70, 117, 0.25);
-    }
-
-    .orb.bottom {
+    .blob.two {
       width: 280px;
       height: 280px;
-      bottom: 80px;
+      top: 140px;
+      right: -90px;
+      background: rgba(53, 89, 139, 0.28);
+    }
+
+    .blob.three {
+      width: 220px;
+      height: 220px;
+      bottom: 100px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(123, 27, 50, 0.18);
+      background: rgba(94, 33, 64, 0.18);
     }
 
     .site {
@@ -117,42 +118,39 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(7, 8, 13, 0.45);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(10, 11, 18, 0.58);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
     }
 
     .topbar-inner {
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      min-height: 74px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
-    .brand-mark {
-      width: 42px;
-      height: 42px;
+    .brand-badge {
+      width: 40px;
+      height: 40px;
       border-radius: 14px;
-      background:
-        linear-gradient(145deg, rgba(179, 29, 59, 0.95), rgba(42, 70, 117, 0.95));
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.15),
-        0 10px 24px rgba(0,0,0,0.28);
+      background: linear-gradient(135deg, var(--red), var(--blue));
+      box-shadow: 0 10px 24px rgba(0,0,0,0.26);
       position: relative;
       overflow: hidden;
     }
 
-    .brand-mark::after {
+    .brand-badge::after {
       content: "";
       position: absolute;
       inset: 1px;
@@ -160,288 +158,156 @@
       border: 1px solid rgba(255,255,255,0.16);
     }
 
-    .brand-text {
-      font-size: 0.98rem;
-    }
-
     .nav {
       display: flex;
-      align-items: center;
-      gap: 10px;
       flex-wrap: wrap;
       justify-content: flex-end;
+      gap: 8px;
     }
 
     .nav a {
-      color: var(--white-soft);
-      font-size: 0.95rem;
-      padding: 11px 14px;
+      color: rgba(255,255,255,0.82);
+      padding: 10px 14px;
       border-radius: 999px;
-      transition: 0.25s ease;
+      font-size: 0.95rem;
+      transition: 0.22s ease;
     }
 
     .nav a:hover {
       background: rgba(255,255,255,0.06);
-      color: var(--text);
       transform: translateY(-1px);
     }
 
     .hero {
-      padding: 72px 0 40px;
+      padding: 72px 0 30px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .hero-card,
-    .panel {
-      background: linear-gradient(180deg, rgba(16, 20, 33, 0.82), rgba(10, 13, 22, 0.9));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius-lg);
+    .hero-wrap {
       position: relative;
-      overflow: hidden;
+      padding: 14px 0 30px;
     }
 
-    .hero-card {
-      padding: 34px;
-      min-height: 470px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-card::before,
-    .panel::before,
-    .price-card::before,
-    .media-frame::before,
-    .service-card::before,
-    .contact-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      border-radius: inherit;
-      padding: 1px;
-      background: linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0.02), rgba(255,255,255,0.08));
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-              mask-composite: exclude;
-    }
-
-    .eyebrow {
+    .hero-note {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      width: fit-content;
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--white-soft);
-      font-size: 0.9rem;
-      margin-bottom: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.88);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
     }
 
-    .eyebrow-dot {
+    .hero-note::before {
+      content: "";
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      background: linear-gradient(145deg, #ff5d7d, #7aa9ff);
-      box-shadow: 0 0 16px rgba(255, 96, 124, 0.6);
+      background: linear-gradient(135deg, #ff7090, #7aa7ff);
+      box-shadow: 0 0 12px rgba(255, 112, 144, 0.55);
     }
 
     h1,
     h2,
     h3,
+    h4,
     p {
       margin: 0;
     }
 
-    .hero h1 {
-      font-size: clamp(2.8rem, 6vw, 5.4rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
-      max-width: 9.5ch;
+    .hero-title {
+      font-size: clamp(3.4rem, 8vw, 6.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+      max-width: 9ch;
+      margin-bottom: 16px;
     }
 
-    .hero h1 .gradient-text {
+    .hero-title .accent {
       display: block;
-      background: linear-gradient(90deg, #ffffff 0%, #ffc8d2 26%, #93baff 74%, #ffffff 100%);
+      background: linear-gradient(90deg, #ffffff 0%, #ffc2cf 35%, #97bcff 76%, #ffffff 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
 
-    .hero-copy {
-      max-width: 54ch;
-      margin-top: 18px;
-      font-size: 1.04rem;
-      line-height: 1.75;
+    .hero-sub {
+      font-size: 1.08rem;
+      line-height: 1.8;
       color: var(--muted);
+      max-width: 56ch;
     }
 
-    .hero-tags {
+    .hero-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 26px;
     }
 
-    .tag {
-      padding: 11px 15px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-      font-size: 0.92rem;
-      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
-    }
-
-    .tag:hover {
-      transform: translateY(-3px);
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(255,255,255,0.16);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
-    }
-
-    .button {
+    .pill,
+    .mini-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
+      min-height: 46px;
+      padding: 0 18px;
       border-radius: 999px;
-      border: 1px solid transparent;
-      transition: 0.28s ease;
       font-weight: 600;
-      letter-spacing: 0.01em;
+      transition: 0.24s ease;
     }
 
-    .button.primary {
-      color: white;
-      background: linear-gradient(135deg, var(--red-2), var(--blue-2));
-      box-shadow: 0 16px 36px rgba(19, 25, 43, 0.36);
-    }
-
-    .button.primary:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 20px 42px rgba(19, 25, 43, 0.48);
-    }
-
-    .button.ghost {
+    .pill {
+      background: linear-gradient(135deg, rgba(155,29,55,0.22), rgba(53,89,139,0.22));
+      border: 1px solid rgba(255,255,255,0.08);
       color: var(--text);
-      background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.1);
     }
 
-    .button.ghost:hover {
+    .pill:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, rgba(155,29,55,0.28), rgba(53,89,139,0.28));
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .mini-link {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.92);
+    }
+
+    .mini-link:hover {
       transform: translateY(-3px);
       background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.17);
     }
 
-    .hero-stats {
+    .mini-summary {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, max-content);
       gap: 14px;
-      margin-top: 34px;
+      margin-top: 32px;
     }
 
-    .stat {
-      padding: 18px;
+    .summary-chip {
+      padding: 12px 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      transition: 0.25s ease;
-    }
-
-    .stat:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,0.06);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.45rem;
-      margin-bottom: 6px;
-      letter-spacing: -0.03em;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    .hero-side {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 470px;
-    }
-
-    .mini-stack {
-      display: grid;
-      gap: 14px;
-    }
-
-    .mini-card {
-      padding: 18px;
-      border-radius: 20px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
       border: 1px solid rgba(255,255,255,0.07);
-      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-    }
-
-    .mini-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255,255,255,0.14);
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
-    }
-
-    .mini-card h3 {
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-
-    .mini-card p {
+      color: rgba(255,255,255,0.92);
       font-size: 0.94rem;
-      color: var(--muted);
-      line-height: 1.7;
+      transition: 0.24s ease;
     }
 
-    .availability {
-      margin-top: 18px;
-      padding: 18px 20px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(179,29,59,0.16), rgba(42,70,117,0.16));
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .availability strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 1rem;
-    }
-
-    .availability p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.94rem;
+    .summary-chip:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.06);
     }
 
     section {
@@ -452,66 +318,45 @@
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 22px;
+      gap: 20px;
+      margin-bottom: 20px;
     }
 
     .section-head h2 {
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
+      font-size: clamp(1.9rem, 3.4vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
     }
 
-    .section-head p {
-      color: var(--muted);
-      max-width: 48ch;
-      line-height: 1.7;
+    .section-tag {
+      color: rgba(255,255,255,0.58);
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
-    .services {
+    .about-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+      align-items: start;
     }
 
-    .service-card {
-      position: relative;
-      padding: 24px;
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(14, 18, 31, 0.86), rgba(10, 13, 23, 0.95));
-      border: 1px solid rgba(255,255,255,0.07);
-      box-shadow: var(--shadow);
-      transition: transform 0.28s ease, border-color 0.28s ease, background 0.28s ease;
-      overflow: hidden;
+    .about-block {
+      padding: 10px 0;
     }
 
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255,255,255,0.14);
-      background: linear-gradient(180deg, rgba(18, 23, 38, 0.93), rgba(11, 14, 25, 0.98));
-    }
-
-    .service-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 16px;
-      background: linear-gradient(145deg, rgba(179,29,59,0.18), rgba(42,70,117,0.18));
-      border: 1px solid rgba(255,255,255,0.08);
+    .about-block h3 {
       font-size: 1.2rem;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
     }
 
-    .service-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
+    .about-block p {
       color: var(--muted);
-      line-height: 1.75;
-      font-size: 0.96rem;
+      line-height: 1.85;
+      font-size: 1rem;
+      max-width: 52ch;
     }
 
     .media-grid {
@@ -520,218 +365,154 @@
       gap: 18px;
     }
 
-    .media-frame {
+    .video-grid {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: start;
+    }
+
+    .frame {
       position: relative;
-      border-radius: 24px;
-      overflow: hidden;
+      background: linear-gradient(180deg, rgba(19, 24, 37, 0.88), rgba(12, 15, 24, 0.96));
       border: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border-radius: 24px;
+      padding: 10px;
+      overflow: hidden;
       box-shadow: var(--shadow);
       transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-      aspect-ratio: 1.15 / 0.95;
     }
 
-    .media-frame:hover {
-      transform: translateY(-8px) scale(1.01);
+    .frame:hover {
+      transform: translateY(-7px);
       border-color: rgba(255,255,255,0.15);
-      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.48);
+      box-shadow: 0 24px 56px rgba(0,0,0,0.34);
     }
 
-    .media-frame::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 45%;
-      background: linear-gradient(to top, rgba(7, 8, 13, 0.22), transparent);
-      pointer-events: none;
-    }
-
-    .media-frame img,
-    .media-frame video {
-      height: 100%;
+    .frame img,
+    .frame video {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
       object-fit: cover;
-      background: #0b0d13;
+      background: #0b0d14;
     }
 
-    .media-frame video {
-      outline: none;
+    .frame video {
+      object-fit: contain;
     }
 
-    .video-grid .media-frame {
-      aspect-ratio: 1 / 1.12;
-    }
-
-    .pricing-grid {
+    .pricing-wrap {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      align-items: start;
+      gap: 26px;
     }
 
-    .pricing-column {
-      display: grid;
-      gap: 18px;
-    }
-
-    .pricing-title {
-      padding: 0 4px;
-    }
-
-    .pricing-title h3 {
-      font-size: 1.35rem;
+    .pricing-col h3 {
+      font-size: 1.28rem;
       letter-spacing: -0.03em;
-      margin-bottom: 8px;
-    }
-
-    .pricing-title p {
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .price-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: linear-gradient(180deg, rgba(17, 21, 35, 0.92), rgba(10, 13, 22, 0.98));
-      box-shadow: var(--shadow);
-      padding: 24px;
-      transition: transform 0.28s ease, border-color 0.28s ease;
-    }
-
-    .price-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(255,255,255,0.16);
-    }
-
-    .price-card.featured {
-      background: linear-gradient(180deg, rgba(27, 21, 34, 0.98), rgba(13, 16, 28, 0.98));
-    }
-
-    .tier-row {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 14px;
       margin-bottom: 14px;
     }
 
-    .tier-row h4 {
-      font-size: 1.18rem;
+    .price-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .price-card {
+      background: linear-gradient(180deg, rgba(18, 22, 35, 0.86), rgba(11, 14, 22, 0.96));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: transform 0.24s ease, border-color 0.24s ease;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .price-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .price-top h4 {
+      font-size: 1.08rem;
       letter-spacing: -0.03em;
       margin-bottom: 6px;
     }
 
-    .tier-row p {
+    .price-top p {
       color: var(--muted);
-      font-size: 0.93rem;
-      line-height: 1.6;
+      line-height: 1.65;
+      font-size: 0.94rem;
     }
 
-    .price {
+    .price-tag {
       white-space: nowrap;
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: -0.03em;
       padding: 10px 14px;
       border-radius: 999px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.08);
+      font-weight: 800;
+      letter-spacing: -0.03em;
     }
 
     .price-card ul {
       list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
       display: grid;
-      gap: 10px;
+      gap: 8px;
     }
 
     .price-card li {
-      color: var(--white-soft);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      padding-left: 18px;
       position: relative;
+      padding-left: 16px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.6;
+      font-size: 0.94rem;
     }
 
     .price-card li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 0.6em;
-      width: 7px;
-      height: 7px;
+      top: 0.62em;
+      width: 6px;
+      height: 6px;
       border-radius: 999px;
-      background: linear-gradient(145deg, #ff5a7d, #8ab3ff);
-      box-shadow: 0 0 14px rgba(138, 179, 255, 0.28);
+      background: linear-gradient(135deg, #ff6d8e, #7caaff);
     }
 
-    .note {
-      margin-top: 20px;
-      padding: 18px 20px;
-      border-radius: 20px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+    .pricing-note {
+      margin-top: 18px;
       color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .contact-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background:
-        radial-gradient(circle at top right, rgba(179, 29, 59, 0.18), transparent 40%),
-        radial-gradient(circle at bottom left, rgba(42, 70, 117, 0.18), transparent 42%),
-        linear-gradient(180deg, rgba(14, 18, 31, 0.92), rgba(10, 13, 22, 0.98));
-      box-shadow: var(--shadow);
-      padding: 28px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .contact-copy h2 {
-      font-size: clamp(1.9rem, 3.2vw, 3rem);
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
-    }
-
-    .contact-copy p {
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 56ch;
-    }
-
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: flex-end;
+      line-height: 1.8;
+      max-width: 70ch;
     }
 
     .footer {
-      padding: 28px 0 60px;
+      padding: 26px 0 56px;
       color: rgba(255,255,255,0.58);
       font-size: 0.92rem;
     }
 
     .footer-inner {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 22px;
       display: flex;
       justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
-      align-items: center;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 22px;
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(22px);
+      transform: translateY(18px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
@@ -740,20 +521,20 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .pricing-grid,
-      .contact-card {
+    @media (max-width: 980px) {
+      .about-grid,
+      .pricing-wrap,
+      .video-grid {
         grid-template-columns: 1fr;
       }
 
-      .services,
       .media-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .contact-actions {
-        justify-content: flex-start;
+      .mini-summary {
+        grid-template-columns: 1fr;
+        max-width: 320px;
       }
     }
 
@@ -765,50 +546,39 @@
       }
 
       .nav {
-        width: 100%;
         justify-content: flex-start;
       }
 
       .hero {
-        padding-top: 44px;
+        padding-top: 42px;
       }
 
-      .hero-card,
-      .hero-side,
-      .service-card,
-      .price-card,
-      .contact-card {
-        padding: 22px;
+      .hero-title {
+        max-width: none;
       }
 
-      .hero-stats,
-      .services,
       .media-grid {
         grid-template-columns: 1fr;
       }
 
       .section-head {
-        align-items: flex-start;
         flex-direction: column;
-      }
-
-      .hero h1 {
-        max-width: none;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
 <body>
-  <div class="orb red"></div>
-  <div class="orb blue"></div>
-  <div class="orb bottom"></div>
+  <div class="blob one"></div>
+  <div class="blob two"></div>
+  <div class="blob three"></div>
 
   <div class="site">
     <header class="topbar">
       <div class="container topbar-inner">
-        <a href="#top" class="brand" aria-label="Go to top">
-          <span class="brand-mark"></span>
-          <span class="brand-text">Roblox_hood0928</span>
+        <a class="brand" href="#top" aria-label="Back to top">
+          <span class="brand-badge"></span>
+          <span>Roblox_hood0928</span>
         </a>
 
         <nav class="nav">
@@ -816,126 +586,65 @@
           <a href="#builds">Builds</a>
           <a href="#animations">Animations</a>
           <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
 
     <main id="top">
       <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-card reveal">
-            <div>
-              <div class="eyebrow">
-                <span class="eyebrow-dot"></span>
-                Roblox Building & Animation Portfolio
-              </div>
+        <div class="container hero-wrap reveal">
+          <div class="hero-note">Roblox Builder & Animator</div>
 
-              <h1>
-                Clean builds.
-                <span class="gradient-text">Smooth animation.</span>
-              </h1>
+          <h1 class="hero-title">
+            Clean Roblox work
+            <span class="accent">with actual style.</span>
+          </h1>
 
-              <p class="hero-copy">
-                I’m <strong>Roblox_hood0928</strong>, a Roblox creator focused on two things: building environments that actually feel good to play in, and animations that give projects that extra layer of polish. Whether you need a small map piece, a larger scene, or custom animation work that feels clean in-game, I keep it simple, readable, and client-friendly from start to finish.
-              </p>
+          <p class="hero-sub">
+            I’m <strong>Roblox_hood0928</strong>. I focus on building and animating for Roblox projects that want a clean look, smooth motion, and work that feels good in-game instead of overcomplicated. If you need environment work, scene design, or animations that feel polished and usable, that’s exactly what I’m here for.
+          </p>
 
-              <div class="hero-tags">
-                <span class="tag">Map Building</span>
-                <span class="tag">Environment Detail</span>
-                <span class="tag">Custom Animations</span>
-                <span class="tag">Robux Payments</span>
-              </div>
-
-              <div class="hero-actions">
-                <a class="button primary" href="#pricing">View Pricing</a>
-                <a class="button ghost" href="#builds">See My Work</a>
-              </div>
-            </div>
-
-            <div class="hero-stats">
-              <div class="stat">
-                <strong>2 Core Skills</strong>
-                <span>Focused on building and animating rather than trying to do everything at once.</span>
-              </div>
-              <div class="stat">
-                <strong>Client Ready</strong>
-                <span>Clear scope, fair Robux pricing, and work built for actual Roblox projects.</span>
-              </div>
-              <div class="stat">
-                <strong>Polish First</strong>
-                <span>Clean presentation, readable work, and attention to feel over clutter.</span>
-              </div>
-            </div>
+          <div class="hero-pills">
+            <span class="pill">Building</span>
+            <span class="pill">Animating</span>
+            <span class="pill">Robux Only</span>
           </div>
 
-          <aside class="panel hero-side reveal">
-            <div class="mini-stack">
-              <div class="mini-card">
-                <h3>Building Style</h3>
-                <p>
-                  I lean toward clean shapes, readable layouts, and detail that supports the game instead of overwhelming it. Good building should look strong in screenshots and feel natural in-game.
-                </p>
-              </div>
-              <div class="mini-card">
-                <h3>Animation Style</h3>
-                <p>
-                  Smooth timing, solid posing, and motion that fits Roblox gameplay. I aim for animations that feel usable right away, not stiff or overdone.
-                </p>
-              </div>
-              <div class="mini-card">
-                <h3>Working With Me</h3>
-                <p>
-                  Straightforward communication, clear expectations, and revisions kept practical. The goal is always to make the final result feel worth using in your game.
-                </p>
-              </div>
-            </div>
+          <div class="hero-links">
+            <a class="mini-link" href="#builds">View Builds</a>
+            <a class="mini-link" href="#animations">View Animations</a>
+            <a class="mini-link" href="#pricing">View Pricing</a>
+          </div>
 
-            <div class="availability">
-              <strong>Payment & scope</strong>
-              <p>
-                All work is paid in <strong>Robux</strong>. Final pricing depends on scale, complexity, and turnaround. The tier prices below give a clean starting point so clients know what to expect before reaching out.
-              </p>
-            </div>
-          </aside>
+          <div class="mini-summary">
+            <div class="summary-chip">Focused on two core services</div>
+            <div class="summary-chip">Clean presentation, simple process</div>
+            <div class="summary-chip">Commission work paid in Robux</div>
+          </div>
         </div>
       </section>
 
       <section id="about">
         <div class="container">
           <div class="section-head reveal">
-            <div>
-              <h2>What I offer</h2>
-            </div>
-            <p>
-              This portfolio is built around the two services I focus on most. No filler, no giant wall of buzzwords, just the work clients usually come to me for.
-            </p>
+            <h2>About</h2>
+            <span class="section-tag">What I do</span>
           </div>
 
-          <div class="services">
-            <article class="service-card reveal">
-              <div class="service-icon">▣</div>
-              <h3>Environment Building</h3>
+          <div class="about-grid">
+            <div class="about-block reveal">
+              <h3>Building</h3>
               <p>
-                From smaller scene work to larger map sections, I build spaces that feel clean, readable, and actually useful for gameplay instead of just looking busy.
+                I make builds that are easy on the eyes and still feel right for gameplay. That can mean smaller detailed areas, scene pieces, or larger map sections depending on what the project needs. I care a lot about shape, flow, and making the final result feel worth using in an actual game.
               </p>
-            </article>
+            </div>
 
-            <article class="service-card reveal">
-              <div class="service-icon">✦</div>
-              <h3>Animation Work</h3>
+            <div class="about-block reveal">
+              <h3>Animating</h3>
               <p>
-                Custom Roblox animations for gameplay, character motion, and project polish. The focus is on smooth motion and a result that feels good in-engine.
+                I also create Roblox animations with a focus on smooth movement, readable posing, and motion that fits the style of the game. The goal is never to overdo it — just clean animation work that feels polished and natural once it’s in-engine.
               </p>
-            </article>
-
-            <article class="service-card reveal">
-              <div class="service-icon">◌</div>
-              <h3>Client-Friendly Process</h3>
-              <p>
-                I keep revisions practical, pricing clear, and communication easy. That means less guessing and a smoother overall process for both sides.
-              </p>
-            </article>
+            </div>
           </div>
         </div>
       </section>
@@ -943,23 +652,19 @@
       <section id="builds">
         <div class="container">
           <div class="section-head reveal">
-            <div>
-              <h2>Build showcase</h2>
-            </div>
-            <p>
-              A quick look at build work framed cleanly so the visuals speak for themselves.
-            </p>
+            <h2>Builds</h2>
+            <span class="section-tag">Screenshots</span>
           </div>
 
           <div class="media-grid">
-            <div class="media-frame reveal">
-              <img src="Contents/Build1.webp" alt="Roblox build showcase 1" loading="lazy" />
+            <div class="frame reveal">
+              <img src="Contents/Build1.webp" alt="Roblox build screenshot 1" loading="lazy" />
             </div>
-            <div class="media-frame reveal">
-              <img src="Contents/Build2.webp" alt="Roblox build showcase 2" loading="lazy" />
+            <div class="frame reveal">
+              <img src="Contents/Build2.webp" alt="Roblox build screenshot 2" loading="lazy" />
             </div>
-            <div class="media-frame reveal">
-              <img src="Contents/Build3.webp" alt="Roblox build showcase 3" loading="lazy" />
+            <div class="frame reveal">
+              <img src="Contents/Build3.webp" alt="Roblox build screenshot 3" loading="lazy" />
             </div>
           </div>
         </div>
@@ -968,22 +673,18 @@
       <section id="animations">
         <div class="container">
           <div class="section-head reveal">
-            <div>
-              <h2>Animation showcase</h2>
-            </div>
-            <p>
-              Sample animation clips presented directly on the page so clients can get a feel for movement and timing without extra clicks.
-            </p>
+            <h2>Animations</h2>
+            <span class="section-tag">Videos</span>
           </div>
 
           <div class="media-grid video-grid">
-            <div class="media-frame reveal">
+            <div class="frame reveal">
               <video src="Contents/Anim1.mp4" controls muted playsinline preload="metadata"></video>
             </div>
-            <div class="media-frame reveal">
+            <div class="frame reveal">
               <video src="Contents/Anim2.mp4" controls muted playsinline preload="metadata"></video>
             </div>
-            <div class="media-frame reveal">
+            <div class="frame reveal">
               <video src="Contents/Anim3.mp4" controls muted playsinline preload="metadata"></video>
             </div>
           </div>
@@ -993,145 +694,115 @@
       <section id="pricing">
         <div class="container">
           <div class="section-head reveal">
-            <div>
-              <h2>Pricing</h2>
-            </div>
-            <p>
-              Clear starting tiers for both services. Exact cost can go up depending on complexity, size, and how custom the request is.
-            </p>
+            <h2>Pricing</h2>
+            <span class="section-tag">Robux</span>
           </div>
 
-          <div class="pricing-grid">
-            <div class="pricing-column">
-              <div class="pricing-title reveal">
-                <h3>Building</h3>
-                <p>
-                  Best for maps, scene pieces, environment work, and polished visual setups inside Roblox.
-                </p>
+          <div class="pricing-wrap">
+            <div class="pricing-col reveal">
+              <h3>Building</h3>
+              <div class="price-list">
+                <article class="price-card">
+                  <div class="price-top">
+                    <div>
+                      <h4>Small Build</h4>
+                      <p>Smaller scene work or simpler environment pieces.</p>
+                    </div>
+                    <div class="price-tag">1,000 R$+</div>
+                  </div>
+                  <ul>
+                    <li>Good for compact commissions</li>
+                    <li>Clean layout and readable detail</li>
+                    <li>Final price can vary by complexity</li>
+                  </ul>
+                </article>
+
+                <article class="price-card">
+                  <div class="price-top">
+                    <div>
+                      <h4>Medium Build</h4>
+                      <p>More detailed areas with stronger visual polish.</p>
+                    </div>
+                    <div class="price-tag">2,500 R$+</div>
+                  </div>
+                  <ul>
+                    <li>Better for larger gameplay spaces</li>
+                    <li>More detail and time put into the scene</li>
+                    <li>Strong option for most projects</li>
+                  </ul>
+                </article>
+
+                <article class="price-card">
+                  <div class="price-top">
+                    <div>
+                      <h4>Large Build</h4>
+                      <p>Larger map sections or more complex environment work.</p>
+                    </div>
+                    <div class="price-tag">5,000 R$+</div>
+                  </div>
+                  <ul>
+                    <li>For broader or more demanding builds</li>
+                    <li>Best for larger-scale commissions</li>
+                    <li>Quoted based on actual scope</li>
+                  </ul>
+                </article>
               </div>
-
-              <article class="price-card reveal">
-                <div class="tier-row">
-                  <div>
-                    <h4>Small Build</h4>
-                    <p>Clean smaller scene work or simple environment pieces.</p>
-                  </div>
-                  <div class="price">1,000 R$+</div>
-                </div>
-                <ul>
-                  <li>Good for compact spaces or focused areas</li>
-                  <li>Clean framing and readable detail</li>
-                  <li>Solid option for smaller commissions</li>
-                </ul>
-              </article>
-
-              <article class="price-card featured reveal">
-                <div class="tier-row">
-                  <div>
-                    <h4>Medium Build</h4>
-                    <p>More detailed map sections with stronger visual depth.</p>
-                  </div>
-                  <div class="price">2,500 R$+</div>
-                </div>
-                <ul>
-                  <li>Better for larger gameplay spaces</li>
-                  <li>More detail, structure, and layout work</li>
-                  <li>Great balance between scope and price</li>
-                </ul>
-              </article>
-
-              <article class="price-card reveal">
-                <div class="tier-row">
-                  <div>
-                    <h4>Large Build</h4>
-                    <p>For bigger environments, heavier detail, or broader map work.</p>
-                  </div>
-                  <div class="price">5,000 R$+</div>
-                </div>
-                <ul>
-                  <li>Best for larger scale commissions</li>
-                  <li>Higher complexity and more build time</li>
-                  <li>Pricing depends heavily on scope</li>
-                </ul>
-              </article>
             </div>
 
-            <div class="pricing-column">
-              <div class="pricing-title reveal">
-                <h3>Animating</h3>
-                <p>
-                  Best for movement, action, idle, or custom character animations made for real in-game use.
-                </p>
+            <div class="pricing-col reveal">
+              <h3>Animating</h3>
+              <div class="price-list">
+                <article class="price-card">
+                  <div class="price-top">
+                    <div>
+                      <h4>Simple Animation</h4>
+                      <p>Shorter or more basic animation work.</p>
+                    </div>
+                    <div class="price-tag">500 R$+</div>
+                  </div>
+                  <ul>
+                    <li>Good for smaller animation requests</li>
+                    <li>Clean movement and usable timing</li>
+                    <li>Solid entry tier</li>
+                  </ul>
+                </article>
+
+                <article class="price-card">
+                  <div class="price-top">
+                    <div>
+                      <h4>Standard Animation</h4>
+                      <p>More refined animation with extra polish.</p>
+                    </div>
+                    <div class="price-tag">1,200 R$+</div>
+                  </div>
+                  <ul>
+                    <li>Better for important gameplay motion</li>
+                    <li>Smoother posing and cleaner flow</li>
+                    <li>Balanced tier for most clients</li>
+                  </ul>
+                </article>
+
+                <article class="price-card">
+                  <div class="price-top">
+                    <div>
+                      <h4>Complex Animation</h4>
+                      <p>Higher-effort animation work with more detail.</p>
+                    </div>
+                    <div class="price-tag">2,200 R$+</div>
+                  </div>
+                  <ul>
+                    <li>Best for more custom requests</li>
+                    <li>More polish and more time involved</li>
+                    <li>Final price depends on the request</li>
+                  </ul>
+                </article>
               </div>
-
-              <article class="price-card reveal">
-                <div class="tier-row">
-                  <div>
-                    <h4>Simple Animation</h4>
-                    <p>Shorter or less complex animations with clean readable motion.</p>
-                  </div>
-                  <div class="price">500 R$+</div>
-                </div>
-                <ul>
-                  <li>Great for basic movement or simple actions</li>
-                  <li>Clean timing and polished posing</li>
-                  <li>Strong entry point for smaller needs</li>
-                </ul>
-              </article>
-
-              <article class="price-card featured reveal">
-                <div class="tier-row">
-                  <div>
-                    <h4>Standard Animation</h4>
-                    <p>More refined animation work with better layering and motion quality.</p>
-                  </div>
-                  <div class="price">1,200 R$+</div>
-                </div>
-                <ul>
-                  <li>Ideal for more important gameplay animations</li>
-                  <li>More attention to smoothness and feel</li>
-                  <li>Balanced tier for most client requests</li>
-                </ul>
-              </article>
-
-              <article class="price-card reveal">
-                <div class="tier-row">
-                  <div>
-                    <h4>Complex Animation</h4>
-                    <p>For more custom motion, stronger posing, or heavier detail.</p>
-                  </div>
-                  <div class="price">2,200 R$+</div>
-                </div>
-                <ul>
-                  <li>Best for higher-effort custom work</li>
-                  <li>More polish and complexity overall</li>
-                  <li>Final quote depends on the exact request</li>
-                </ul>
-              </article>
             </div>
           </div>
 
-          <div class="note reveal">
-            Prices shown here are starting points, not hard limits. Larger requests, rush work, or more complex ideas may cost more. Everything is paid in <strong>Robux</strong>, and scope can be discussed before anything starts.
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <div class="container">
-          <div class="contact-card reveal">
-            <div class="contact-copy">
-              <h2>Need a builder or animator for your project?</h2>
-              <p>
-                If you want clean work, clear pricing, and a portfolio that matches what you’re actually looking for, feel free to reach out. Whether it’s a small commission or a larger idea, I’m open to discussing the scope and seeing what fits.
-              </p>
-            </div>
-
-            <div class="contact-actions">
-              <a class="button primary" href="mailto:your-email@example.com">Email Me</a>
-              <a class="button ghost" href="https://discord.com" target="_blank" rel="noreferrer">Discord</a>
-            </div>
-          </div>
+          <p class="pricing-note reveal">
+            All payments are in Robux. Prices shown here are starting points and can go up depending on scale, complexity, revisions, or how custom the request is.
+          </p>
         </div>
       </section>
     </main>
@@ -1139,7 +810,7 @@
     <footer class="footer">
       <div class="container footer-inner">
         <span>© 2026 Roblox_hood0928</span>
-        <span>Building • Animating • Roblox commissions in Robux</span>
+        <span>Building • Animating • Robux commissions</span>
       </div>
     </footer>
   </div>
@@ -1155,28 +826,11 @@
         }
       });
     }, {
-      threshold: 0.14
+      threshold: 0.12
     });
 
-    revealElements.forEach((element) => observer.observe(element));
-
-    const hoverCards = document.querySelectorAll('.media-frame, .service-card, .price-card, .mini-card, .stat');
-
-    hoverCards.forEach((card) => {
-      card.addEventListener('mousemove', (event) => {
-        const rect = card.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * -2.2;
-        const rotateY = ((x - centerX) / centerX) * 2.2;
-        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-      });
-
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = '';
-      });
+    revealElements.forEach((element) => {
+      observer.observe(element);
     });
   </script>
 </body>

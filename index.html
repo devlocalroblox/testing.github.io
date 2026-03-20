@@ -35,7 +35,9 @@
         linear-gradient(180deg, #08090e 0%, #111827 42%, #0c101b 100%);
       min-height: 100vh;
       overflow-x: hidden;
-    }0e 0%,body::before {
+    }
+
+    body::before {
       content: "";
       position: fixed;
       inset: 0;
@@ -45,7 +47,21 @@
         linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
       background-size: 34px 34px;
       opacity: 0.22;
-    }relative;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    .site {
+      position: relative;
       z-index: 1;
     }
 
@@ -181,7 +197,18 @@
       letter-spacing: -0.08em;
       max-width: 11.5ch;
       text-wrap: balance;
- .86;
+      text-shadow: 0 12px 32px rgba(0,0,0,0.28);
+    }
+
+    .hero-title .accent {
+      display: block;
+      color: #ffffff;
+    }
+
+    .hero-text {
+      max-width: 74ch;
+      font-size: 1.08rem;
+      line-height: 1.86;
       color: var(--muted);
       text-shadow: 0 8px 20px rgba(0,0,0,0.22);
     }
@@ -194,7 +221,9 @@
     }
 
     .mini-link {
-      display:
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       min-height: 46px;
       padding: 0 18px;
       border-radius: 999px;
@@ -411,7 +440,13 @@
       display: flex;
       justify-content: space-between;
       gap: 16px;
-      fl ease, transform 0.7s ease;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
     .reveal.show {
@@ -486,7 +521,10 @@
       <div class="container topbar-inner">
         <a class="brand" href="#top" aria-label="Back to top">
           <span class="brand-badge">
-            <img src="Contents/Avatar.webp"      </a>
+            <img src="Contents/Avatar.webp" alt="Roblox_hood0928 avatar" />
+          </span>
+          <span>Roblox_hood0928</span>
+        </a>
 
         <nav class="nav">
           <a href="#about">About</a>
@@ -505,11 +543,10 @@
               Roblox_hood0928
             </h1>
 
-            <div class="hero-subtitle"><strong>Builder<h1 class="hero-title">
-              Roblox_hood0928
-            </h1>
+            <div class="hero-subtitle"><strong>Builder &amp; Animator</strong></div>
 
-            <div class="hero-subtitle"><strong>Builder &amp; Animator</strong></div>ion, and work that feels good in-game instead of overcomplicated. If you need environment work, scene design, or animations that feel polished and usable, that’s exactly what I’m here for.
+            <p class="hero-text">
+              I’m <strong>Roblox_hood0928</strong>. I focus on building and animating for Roblox projects that want a clean look, smooth motion, and work that feels good in-game instead of overcomplicated. If you need environment work, scene design, or animations that feel polished and usable, that’s exactly what I’m here for.
             </p>
 
             <div class="hero-links">
